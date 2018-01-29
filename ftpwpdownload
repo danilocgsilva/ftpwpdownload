@@ -1,0 +1,7 @@
+{
+    "name": "ftpwpdownload",
+    "version": "0.0.1",
+    "description": "Download the WordPress files from ftp address, ignoring non-wordpress files in the root",
+    "scripts": [ "ftpwpdownload.sh" ],
+    "install": "make install"
+}
