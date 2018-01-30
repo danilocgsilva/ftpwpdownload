@@ -79,7 +79,7 @@ ftpwpdownload () {
     read -p "Which is the ftp server directory to locate the WordPress installation? Type here -> " ftpbasedir
 
     mkdir $base_dir/$date
-    cd $date
+    cd $base_dir/$date
 
     for i in $(ftpwpdownload_listfiles); do
         ncftpget -R -v -T -p $password -u $ftpuser $ftpserver . $ftpbasedir/$i
