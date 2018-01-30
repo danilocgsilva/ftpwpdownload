@@ -81,6 +81,8 @@ ftpwpdownload () {
     mkdir $base_dir/$date
     cd $base_dir/$date
 
+    set +e
+
     for i in $(ftpwpdownload_listfiles); do
         ncftpget -R -v -T -p $password -u $ftpuser $ftpserver . $ftpbasedir/$i
     done
