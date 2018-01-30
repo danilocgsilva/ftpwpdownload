@@ -64,7 +64,7 @@ ftpwpdownload () {
         return 1
     fi
 
-    read -p "Which is the ftp server directory to locate the Drupal 7 installation? Type here -> " ftpbasedir
+    read -p "Which is the ftp server directory to locate the WordPress installation? Type here -> " ftpbasedir
 
     mkdir $date
     cd $date
