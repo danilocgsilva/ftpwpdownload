@@ -8,4 +8,4 @@ sudo make
 ```
 
 ## Usage
-Just type `ftpwpdownload` and answer to the questions.
+Just type `ftpwpdownload` and answer to the questions. Optionally, you can provide a folder that if not exists, the program will try to create.

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ## version
 VERSION="0.0.1"
 
@@ -46,6 +48,16 @@ EOF
 ## main function
 ftpwpdownload () {
 
+    base_dir=""
+    if [ ! -z $1 ]; then
+        if [ ! -d $1 ] && [[ $(mkdir $1) -ne 0 ]]; then
+            echo The folder does not exists and could not be created. Check the permission to create file.
+            exit
+        else
+            base_dir=$1
+        fi
+    fi
+
     if ! ftpwpdownload_checkncftpdependency; then
         echo The ncftp utility is not installed in the system. Install it first.
         return 1
@@ -66,7 +78,7 @@ ftpwpdownload () {
 
     read -p "Which is the ftp server directory to locate the WordPress installation? Type here -> " ftpbasedir
 
-    mkdir $date
+    mkdir $base_dir/$date
     cd $date
 
     for i in $(ftpwpdownload_listfiles); do
