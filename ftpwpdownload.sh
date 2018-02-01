@@ -56,6 +56,8 @@ ftpwpdownload () {
         else
             base_dir=$1
         fi
+    else
+        base_dir=$(pwd)
     fi
 
     if ! ftpwpdownload_checkncftpdependency; then
